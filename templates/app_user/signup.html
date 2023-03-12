@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block content%}
+
+
+<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+      <article class="card-body">
+		<header class="mb-4"><h4 class="card-title text-center">Sign up is fast and easy!</h4></header>
+		 {% if messages %}
+            <ul class="messages text-center">
+                <style>
+                    .error{
+                        color:red !important;
+                    }
+                    .success{
+                        color:green !important;
+                    }
+                </style>
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="list-style-type: none !important;">
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+		<form id="signupForm" action="{% url 'app_user:signup' %}" method="POST">
+			{% csrf_token %}
+			
+				<div class="form-row">
+					<div class="col form-group">
+						 <label for="sign-name" text-left >First Name:</label><br>
+                                {{user_creation_form.first_name}}
+                                {{user_creation_form.first_name.errors}}
+                                <!-- <input type="text" name="signup-name" id="sign-name" required1> -->
+                            </div>
+					 <!-- form-group end.// -->
+					<!-- form-group end.// -->
+				 <!-- form-row end.// -->
+				<div class="col form-group">
+					<label class="custom-control custom-radio custom-control-inline">
+					 <label class="custom-control custom-radio custom-control-inline">Gender:</label><br>
+                                {{appuserform.gender}}
+                                {{appuserform.gender.errors}}
+                               
+					</div>
+				</div> <!-- form-group end.// -->
+					<div class="form-group">
+					<label type="email">Email:</label><br>
+                                {{user_creation_form.email}}
+                                {{user_creation_form.email.errors}}
+					<small class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+					 <!-- form-group end.// -->
+				<div class="form-row">
+
+					<div class="form-group col-md-6">
+					  <label>Address</label>
+					   {{appuserform.address}}
+                                {{appuserform.address.errors}}
+					</div>
+					<div class="form-group col-md-6">
+					  <label>City:</label><br>
+					   {{appuserform.city}}
+                                {{appuserform.city.errors}}
+					</div> <!-- form-group end.// -->
+					<div class="form-row"><div class="form-group col-md-6">
+					  <label>Zipcode:</label>
+					   {{appuserform.zipcode}}
+                                {{appuserform.zipcode.errors}}
+					</div>
+					<div class="form-group col-md-6">
+					  <label>Mobile:</label><br>
+					  {{appuserform.mobile}}
+                                {{appuserform.mobile.errors}}
+					</div>
+					 <!-- form-group end.// -->
+				</div> <!-- form-row.// -->
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label>Create password</label>
+					   {{user_creation_form.password1}}
+                                {{user_creation_form.password1.errors}}
+					</div> <!-- form-group end.// --> 
+					<div class="form-group col-md-6">
+						<label>Repeat password</label>
+					     {{user_creation_form.password2}}
+                                {{user_creation_form.password2.errors}}
+					</div> <!-- form-group end.// -->  
+				</div>
+			    <div class="form-group text-center">
+			        <input type="submit" value="Sign Up" class="btn btn-primary btn-block"> Signup  </input>
+			    </div> <!-- form-group// -->      
+			    <div class="form-group"> <br><br>
+		            <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="" required> <div class="custom-control-label"> I agree with <a href="#">terms and contitions</a>  </div> </label>
+		        </div> <!-- form-group end.// -->           
+			</form>
+		</article><!-- card-body.// -->
+    </div>
+
+    <p class="text-center mt-4">Have an account? <a href="{% url 'app_user:signin' %}"> Log In</a></p>
+
+   {% endblock %}

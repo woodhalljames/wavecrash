@@ -1,0 +1,110 @@
+<!-- ========================= FOOTER ========================= -->
+
+
+
+<br><br>
+<footer class="section-footer bg-secondary">
+	<div class="container">
+		<section class="footer-top padding-y-lg text-white">
+			<div class="row">
+				<aside class="col-md col-6">
+					<h6 class="title">Top Categories</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#"></a></li>
+						<li> <a href="#">Puma</a></li>
+						<li> <a href="#">Reebok</a></li>
+						<li> <a href="#">Nike</a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Company</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#">About us</a></li>
+						<li> <a href="#">Career</a></li>
+						<li> <a href="#">Contact Us</a></li>
+						<li> <a href="#">Influencer Program</a></li>
+						<li> <a href="#">Sitemap</a></li>
+					</ul>
+				</aside>
+				<!--aside class="col-md col-6">
+					<h6 class="title">Help</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#">Contact us</a></li>
+						<li> <a href="#">Money refund</a></li>
+						<li> <a href="#">Order status</a></li>
+						<li> <a href="#">Shipping info</a></li>
+						<li> <a href="#">Open dispute</a></li>
+					</ul>
+				</aside--->
+				<aside class="col-md col-6">
+					<h6 class="title">Account</h6>
+					<ul class="list-unstyled">
+						<li> <a href="#"> User Login </a></li>
+						<li> <a href="#"> User register </a></li>
+						<li> <a href="#"> Account Setting </a></li>
+						<li> <a href="#"> My Orders </a></li>
+					</ul>
+				</aside>
+				<aside class="col-md col-6">
+					<h6 class="title">Social</h6>
+					<ul class="list-unstyled">
+						<li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
+						<li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
+						<li><a href="#"> <i class="fab fa-instagram"></i> Instagram </a></li>
+						<li><a href="#"> <i class="fab fa-tiktok"></i> Tik-Tok </a></li>
+					</ul>
+				</aside>
+		 <!-- row.// -->	<!-- footer-top.// -->
+		
+<div class="col-lg-3 col-md-6">
+	<hr class="d-block d-md-none">
+	<div style="margin-bottom: 10px;"></div>
+    <div>
+            <h4 class="mb-3">Get the news</h4>
+            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <form>
+               <div>
+        <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder="Your Email Please" required>
+            <br>
+            <input type="submit" value="Subscribe" class="btn btn-primary btn-sm">
+        </form>
+    </div>
+              <!-- /input-group-->
+            </form>
+            <hr>
+      <div style="border: 1px solid lightskyblue; border-radius: 2px; padding:30px; padding-top: 20px; text-align: center;">
+    <div><strong>SUBSCRIBE</strong></div>
+    <div style="margin-bottom: 10px;">Subscribe to get the latest items, blog posts, and deals!</div>
+    <div>
+        <form action="" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder="Your Email Please" required>
+            <br>
+            <input type="submit" value="Subscribe" class="btn btn-primary btn-sm">
+        </form>
+    </div>
+</div>
+    </section>
+		<section class="footer-bottom text-center">
+		
+				<p class="text-white">Privacy Policy - Terms of Use</p>
+				<p class="text-muted"> &copy 2023 Pastel Wave, All rights reserved </p>
+				<br>
+		</section>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% include 'blog/bloghead.html' %}
+
+<body>
+{% include 'blog/blognav.html' %}
+	{% block content %}
+
+	{% endblock content %}
+	{% include 'includes/footer.html' %}
+{% include 'blog/scripts.html' %}
+</body>
+</html>

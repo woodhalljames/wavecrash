@@ -1,0 +1,133 @@
+{% load static %}
+<header class="section-header">
+<nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
+<div class="container">
+    <ul class="navbar-nav d-none d-md-flex mr-auto">
+		<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Payment</a></li>
+    </ul>
+    <ul class="navbar-nav">
+		<li class="nav-item"><a href="#" class="nav-link"> Use Coupon Code: CRASH3 for 10% off your order! </a></li>
+		<!--li class="nav-item dropdown">
+		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> English </a>
+		    <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
+				<li><a class="dropdown-item" href="#">Arabic</a></li>
+				<li><a class="dropdown-item" href="#">Russian </a></li>
+		    </ul>
+		</li-->
+	</ul> <!-- list-inline //  -->
+  </div> <!-- navbar-collapse .// -->
+ <!-- container //  -->
+</nav>
+
+<section class="header-main border-bottom">
+	<div class="container" style="height:100%;">
+		<div class="row align-items-center">
+			<div class="col-xl-2 col-lg-3 col-md-12">
+				<a href="{% url 'home' %}">
+					<img class="logo icon icon-md rounded-circle" src="{% static 'images/logo.png' %}">    <span class="fw-bold text-uppercase text-lightblue">Pastel Wave</span></a>
+				 <!-- brand-wrap.// -->
+			</div>
+			<div class="col-xl-6 col-lg-5 col-md-6">
+	<form action="#" class="text-center search-header">
+		<div class="input-group align-items-center w-100">
+			<!--select class="custom-select" style="width:18%" name="category_name">
+				<option value="">All</option>
+				<option value="codex">Specials</option>
+				<option value="comments">Best Sellers</option>
+				<option value="content">Latest</option>
+			</select-->
+			<input type="text" class="form-control" style="width: 57%" placeholder="Search">
+			<div class="input-group-append" style="width: 25%">
+				<button class="btn btn-primary btn-block" type="submit">
+					<i class="fa fa-search"></i> Search
+				</button>
+			</div>
+		</div>
+	</form> 
+	 <!-- search-wrap .end// -->
+			</div> <!-- col.// -->
+			<br><br><br>
+			<div class="col-xl-4 col-lg-4 col-md-6">
+			<div class="widgets-wrap float-md-right">
+			<div class="widget-header  mr-3">
+				<a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></a>
+				<span class="badge badge-pill badge-danger notify">0</span>
+			</div>
+			<div class="widget-header  mr-3">
+				<a href="#" class="icon icon-sm rounded-circle border"><i class="fa fa-heart"></i></a>
+				<span class="badge badge-pill badge-danger notify">0</span>
+			</div>
+			{% if request.user.is_authenticated %}
+			<div class="widget-header icontext">
+				<a href="{% url 'app_user:account' %}" class="icon icon-sm rounded-circle border"><i class="fa fa-user"></i></a>
+				{% endif %}
+				</div><div class="text">
+					{% if request.user.is_authenticated %}
+				<div> 
+						<span class="text-muted"><a href="{% url 'app_user:signout' %}">Logout</a></span>
+					</div>
+					{% else %}
+					<span class="text-muted">Welcome!</span>
+					<div> 
+						<a href="{% url 'app_user:signin' %}">Sign in</a> |  
+						<a href="{% url 'app_user:signup' %}"> Register</a>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+
+		</div>
+			<!-- widgets-wrap.// -->
+			</div> <!-- col.// -->
+		</div> <!-- row.// -->
+	</div> <!-- container.// -->
+</section>
+</header> <!-- header-main .// -->
+<nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav">
+      	<li class="nav-item dropdown">
+          <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i> &nbsp;  All</strong></a>
+          <div class="dropdown-menu">
+          	  <a class="dropdown-item" href="{% url 'product:all-category' %}">All Categories</a>
+          	  <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'product:women' %}">Womens</a>
+            <a class="dropdown-item" href="{% url 'product:men' %}">Mens</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'product:electronics' %}">Electronics</a>
+            <a class="dropdown-item" href="{% url 'product:Accessories' %}">Accesories</a>
+            <a class="dropdown-item" href="{% url 'product:pets' %}">Pets</a>
+            <a class="dropdown-item" href="{% url 'product:furniture' %}">Furniture</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Womens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Electronics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Furniture</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Accessories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pets</a>
+        </li>
+       
+        </li>
+      </ul>
+    </div> <!-- collapse .// -->
+  </div> <!-- container .// -->
+</nav>
