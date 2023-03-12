@@ -1,0 +1,32 @@
+body{
+	font-family: 'Asap Condensed', sans-serif;
+    font-family: 'Mulish', sans-serif;
+    font-family: 'Rampart One', cursive;
+    font-family: 'Varela Round', sans-serif;
+}
+
+:root{
+	--blue:#1DCDD6;
+	--seafoam:#34DDDA;
+	--pink:#FDB3D3;
+	--white:#FFFFFF;
+	--black:#000000;
+	--yellow:#FDFD96;
+	--peach:#ADDFAD;
+}
+
+.newsletter {
+  background-color: #f2f2f2;
+  padding: 50px;
+  text-align: center;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.newsletter label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 10px
